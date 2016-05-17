@@ -2,10 +2,10 @@
  *********************************************
  *  314 Principles of Programming Languages  *
  *  Fall 2015                                *
- *  Author: Ulrich Kremer                   *
- *  Student Version                          *
+ *  Roberto Merino                           *
  *********************************************
  */
+ //includes all the functions that are going to be used 
 
 #include "Instr.h"
 #include <stdio.h>
