@@ -2,8 +2,7 @@
 # *********************************************
 # *  314 Principles of Programming Languages  *
 # *  Fall 2015                                *
-# *  Authors: Ulrich Kremer                   *
-# *  Student Version                          *
+# *  Roberto Merin	                      *
 # *********************************************
 # */
 
