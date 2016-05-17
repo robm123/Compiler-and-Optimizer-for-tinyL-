@@ -2,8 +2,7 @@
  *********************************************
  *  314 Principles of Programming Languages  *
  *  Fall 2015                                *
- *  Authors: Ulrich Kremer                   *
- *  Student Version                          *
+ *  Roberto Merino                           *
  *********************************************
  */
 
@@ -71,36 +70,14 @@ void PrintInstructionList(FILE * outfile, Instruction * instr)
 	}
 	
 	printf("We are Inside!\n");
-	Instruction *YASS;
-	YASS = instr;
+	Instruction *ptr;
+	ptr = instr;
 	
-	while(YASS != NULL)                               
+	while(ptr != NULL)                               
 	{	
-		/*
-		if(YASS->opcode == LOADI)
-			printf("\nLOADI : num -> %d\t critical: %c", YASS->field1, YASS->critical);
-		if(YASS->opcode == LOADAI)
-			printf("\nLOADAI: num -> r%d\t critical: %c", YASS->field1,YASS->critical);
-		if(YASS->opcode == STOREAI)
-			printf("\nSTOREAI: num -> r%d\t critical: %c", YASS->field1,YASS->critical);
-		if(YASS->opcode == ADD)
-			printf("\nADD: num -> r%d\t\tcritical: %c", YASS->field1,YASS->critical);
-		if(YASS->opcode == SUB)
-			printf("\nSUB: num -> r%d\t critical: %c", YASS->field1,YASS->critical);
-		if(YASS->opcode == DIV)
-			printf("\nDIV: num-> r%d\t critical: %c",YASS->field1,YASS->critical);
-		if(YASS->opcode == MUL)
-			printf("\nMUL: num -> r%d\t\tcritical: %c", YASS->field1,YASS->critical);
-		if(YASS->opcode == OUTPUTAI)
-			printf("\nOUTPUTAI: num -> r%d\t critical: %c\n", YASS->field1,YASS->critical);
-		*/		
-		
-		PrintInstruction(outfile, YASS);
-			
-		YASS = YASS->next;
-		                     
+		PrintInstruction(outfile, ptr);
+		ptr = ptr->next;
 	}
-
 }
 
 Instruction *ReadInstruction(FILE * infile)
@@ -260,4 +237,3 @@ Instruction *LastInstruction(Instruction * instr)
 		instr = instr->next;
 	return instr;
 }
-
