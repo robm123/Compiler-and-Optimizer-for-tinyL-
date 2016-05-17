@@ -2,8 +2,7 @@
  *********************************************
  *  314 Principles of Programming Languages  *
  *  Fall 2015                                *
- *  Author: Ulrich Kremer                    *
- *  Student Version                          *
+ *  Roberto Merino	                     *
   *********************************************
  */
 
@@ -21,7 +20,7 @@ struct InstructionInfo {
 	int field3;
 	Instruction *prev;	/* previous instruction */
 	Instruction *next;	/* next instruction */
-	char critical;   // 'c' == crucial ........'n' == not crucial instruction
+	char critical;         // 'c' == crucial ........'n' == not crucial instruction
 };
 
 #endif
