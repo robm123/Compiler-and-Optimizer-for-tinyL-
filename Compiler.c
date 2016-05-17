@@ -2,8 +2,7 @@
  *********************************************
  *  314 Principles of Programming Languages  *
  *  Fall 2015                                *
- *  Author: Ulrich Kremer                    *
- *  Student Version                          *
+ *  Roberto Merino                           *
  *********************************************
  */
 
@@ -122,7 +121,7 @@ static int expr()
 		reg = next_register();
 		CodeGen(ADD, left_reg, right_reg, reg);
 		return reg;
-	case '-':        //started writing code here 
+	case '-':       
 		next_token();
 		left_reg = expr();
 		right_reg = expr();
@@ -143,7 +142,7 @@ static int expr()
 		reg = next_register();
 		CodeGen(DIV, left_reg, right_reg, reg);
 		return reg;
-	/* YOUR CODE GOES HERE -------------------------------------*/
+	/* -------------------------------------*/
 	case 'a':
 	case 'b':
 	case 'c':
@@ -159,8 +158,6 @@ static int expr()
 	case 'm':
 	case 'n':		
 		return variable();
-
-	/* YOUR CODE GOES HERE */
 
 	case '0':
 	case '1':
@@ -189,26 +186,19 @@ static void assign()
 	if(token == '=')
 	{
 		next_token();
-		int x = expr();    ////?????????????????????works but clear it out ... good
+		int x = expr();  
 		//regnum = regnum-1;
 		CodeGen(STOREAI,x,0,((tkn-'a')*4));
 	}
 	
-	
-	
-				/* YOUR CODE GOES HERE *///SAI
 }
 
 static void print()
 {	
 	next_token();
-	
 	char tkn = token;
-	
-	//variable();
 	next_token();
-		
-	//output
+
 	CodeGen(OUTPUTAI,0,((tkn -'a')*4),EMPTY_FIELD);	/* YOUR CODE GOES HERE */
 }
 
@@ -218,10 +208,6 @@ static void stmt()
 		assign();
 	else if(token == '!')
 		print();
-		
-		
-		
-
 }
 
 static void morestmts()
@@ -229,10 +215,9 @@ static void morestmts()
 	
 	if(token == ';')
 	{
-			next_token();
-			stmtlist();
+		next_token();
+		stmtlist();
 	}
-	/* YOUR CODE GOES HERE */
 }
 
 static void stmtlist()
@@ -241,19 +226,10 @@ static void stmtlist()
 	stmt();
 	morestmts();
 	
-	
-	/* YOUR CODE GOES HERE */
 }
 
 static void program()
 {
-	/* YOUR CODE GOES HERE */
-        
-														/* THIS CODE IS BOGUS */
-														//int dummy;
-														/* THIS CODE IS BOGUS */
-														//dummy = expr();
-														
 	stmtlist();													
   
 	if (token != '.') 
@@ -263,9 +239,7 @@ static void program()
 	}
 	
 	//CodeGen(STOREAI, regnum, regnum, 1024+regnum); 
-	//CodeGen(LOADAI, regnum, regnum, EMPTY_FIELD); 
-	
-	
+	//CodeGen(LOADAI, regnum, regnum, EMPTY_FIELD);
 }
 
 /*************************************************************************/
